@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark ledger palette (default) */
+:root {
+  --color-paper: 15 23 18;
+  --color-surface: 24 38 32;
+  --color-line: 42 59 51;
+  --color-ink: 234 227 210;
+  --color-ledger: 227 211 160;
+  --color-gold: 201 162 39;
+  --color-sage: 116 169 140;
+  --color-rust: 193 97 74;
+  --color-teal: 90 148 168;
+
+  --shadow-elegant: 0 1px 0 rgba(234, 227, 210, 0.04) inset, 0 20px 40px -28px rgba(0, 0, 0, 0.7);
+  --shadow-soft: 0 1px 0 rgba(234, 227, 210, 0.04) inset, 0 8px 24px -8px rgba(0, 0, 0, 0.45);
+}
+
+/* Light ledger palette — toggled via .light class on <html> */
+html.light {
+  --color-paper: 247 243 234;
+  --color-surface: 255 253 248;
+  --color-line: 228 220 200;
+  --color-ink: 42 33 24;
+  --color-ledger: 122 92 30;
+  --color-gold: 169 130 31;
+  --color-sage: 79 130 103;
+  --color-rust: 168 75 54;
+  --color-teal: 47 107 133;
+
+  --shadow-elegant: 0 1px 0 rgba(42, 33, 24, 0.03) inset, 0 20px 40px -28px rgba(42, 33, 24, 0.18);
+  --shadow-soft: 0 1px 0 rgba(42, 33, 24, 0.03) inset, 0 8px 24px -8px rgba(42, 33, 24, 0.12);
+}
+
+body {
+  background-color: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Signature element: faint brass-ruled ledger lines behind the header,
+   like impressed rules on a private account book */
+.ledger-rules {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    rgb(var(--color-gold) / 0.08) 28px
+  );
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Thin colored top-edge on stat/section cards — encodes category at a glance */
+.accent-top {
+  position: relative;
+}
+.accent-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 9999px 9999px 0 0;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+/* Custom scrollbar tuned to the ledger surface */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgb(var(--color-paper)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--color-line)); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-gold) / 0.4); }

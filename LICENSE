@@ -1,0 +1,30 @@
+Copyright (c) 2026 Daffa Adirangga
+
+All Rights Reserved.
+
+This software and associated source code ("Software") are the private
+property of Daffa Adirangga. No part of this Software may be copied,
+modified, merged, published, distributed, sublicensed, and/or sold,
+in whole or in part, without the prior written permission of the
+copyright holder.
+
+This Software is provided for personal use only. Unauthorized use,
+reproduction, or distribution of this Software, or any portion of it,
+is strictly prohibited.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+---
+
+Note: This project uses third-party open-source libraries (React,
+Tailwind CSS, Supabase JS client, Recharts, jsPDF, SheetJS/xlsx,
+lucide-react, and others listed in package.json), each of which
+remains under its own respective license. This copyright notice
+applies only to the original application code written for this
+project, not to those third-party dependencies.

@@ -1,0 +1,25 @@
+import { useCallback, useEffect, useState } from 'react'
+
+const STORAGE_KEY = 'pf-theme'
+
+function getInitialTheme() {
+  if (typeof window === 'undefined') return 'dark'
+  const saved = window.localStorage.getItem(STORAGE_KEY)
+  if (saved === 'light' || saved === 'dark') return saved
+  return 'dark' // matches the app's original ledger-dark design
+}
+
+export function useTheme() {
+  const [theme, setTheme] = useState(getInitialTheme)
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('light', theme === 'light')
+    window.localStorage.setItem(STORAGE_KEY, theme)
+  }, [theme])
+
+  const toggleTheme = useCallback(() => {
+    setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
+  }, [])
+
+  return { theme, toggleTheme }
+}
