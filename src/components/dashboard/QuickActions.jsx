@@ -53,7 +53,7 @@ function QuickActions({ transactions, onAddExpense, onAddIncome }) {
     }
     setExporting('pdf')
     try {
-      const { exportTransactionsToPDF } = await import('../../lib/exportUtils')
+      const { exportTransactionsToPDF } = await import('../../lib/exportPdf')
       exportTransactionsToPDF(transactions, formatCurrency, currency)
       toast.success('Laporan PDF berhasil diunduh.')
     } catch {
@@ -70,7 +70,7 @@ function QuickActions({ transactions, onAddExpense, onAddIncome }) {
     }
     setExporting('excel')
     try {
-      const { exportTransactionsToExcel } = await import('../../lib/exportUtils')
+      const { exportTransactionsToExcel } = await import('../../lib/exportExcel')
       exportTransactionsToExcel(transactions, currency)
       toast.success('Laporan Excel berhasil diunduh.')
     } catch {

@@ -267,7 +267,7 @@ export default function Laporan({ transactions, categories, categoryMeta }) {
     if (filtered.length === 0) return
     setExporting('pdf')
     try {
-      const { exportTransactionsToPDF } = await import('../../lib/exportUtils')
+      const { exportTransactionsToPDF } = await import('../../lib/exportPdf')
       exportTransactionsToPDF(filtered, formatCurrency, currency)
     } catch {
       toast.error('Gagal membuat PDF. Coba lagi.')
@@ -280,7 +280,7 @@ export default function Laporan({ transactions, categories, categoryMeta }) {
     if (filtered.length === 0) return
     setExporting('excel')
     try {
-      const { exportTransactionsToExcel } = await import('../../lib/exportUtils')
+      const { exportTransactionsToExcel } = await import('../../lib/exportExcel')
       exportTransactionsToExcel(filtered, currency)
     } catch {
       toast.error('Gagal membuat file Excel. Coba lagi.')
